@@ -1,0 +1,390 @@
+/*
+Theme Name:         Wordpress EBI Visual Framework
+Theme URI:          https://www.bybe.net/ebiframework/
+Author:             Simon Hayter
+Author URI:         https://simonhayter.co.uk
+Description:        EBI Visual Framework is a starter theme for developers, bloggers and website designers wanting a responsive WordPress template based on Zurb Foundation 6. Great for all modern browsers and compatible with most mobile phones, tablets and desktop computers! Powered by Zurb and coded by Simon Hayter from BYBE.
+Version:            1.2
+License:            GNU GENERAL PUBLIC LICENSE
+License URI:        http://www.gnu.org/licenses/gpl-3.0.en.html
+Tags: light, white, blue, EMBL, EMBL-EBI, responsive layout, left sidebar, right sidebar, custom Menu
+Text-domain: ebiframework
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to change the world every visitor at a time.
+*/
+
+.ef-theme .top-bar {
+  padding: 0rem;
+}
+
+.ef-theme .title-bar, .ef-topbar {
+  position: relative;
+}
+
+.ef-theme .top-bar, .ef-theme .top-bar ul, .ef-theme .top-bar .dropdown.menu .submenu, .ef-theme .title-bar-title, .ef-theme .title-bar {
+  background: #333;
+  color: #666;
+  border: medium none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ef-theme .top-bar ul {
+  margin-left: 0;
+}
+
+.ef-theme .dropdown.menu .has-submenu.is-down-arrow > a::after {
+  border-width: 0;
+}
+
+.ef-theme .top-bar .dropdown.menu .submenu li a {
+  padding: 0.7rem 1rem;
+}
+
+.ef-theme .top-bar li a {
+  color: #666;
+}
+
+.ef-sidebar-footer h6 {
+  font-weight: 700;
+}
+
+.ef-sidebar-footer ul {
+  margin-left: 0;
+}
+
+.ef-sidebar-footer a {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.ef-sidebar-footer a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.ef-sidebar-footer li {
+  list-style: none;
+}
+
+.ef-theme main figure {
+  margin: 1rem 0;
+}
+
+.ef-theme main figure img {
+  border: 4px solid #fefefe;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  transition: box-shadow 0.2s ease-out 0s;
+}
+
+.ef-footer-menu-b {
+  background: #074e68;
+  padding: 1rem 0;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 400;
+}
+
+.ef-copyright {
+  background: #333;
+  width: 100%;
+  padding:1rem 0 0.5rem;
+  color: #666;
+
+}
+
+.ef-copyright a {
+  color: #666;
+  padding: 3px 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ef-copyright .menu .active > a {
+  background: transparent;
+}
+
+.ef-copyright .ef-lnk {
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+.ef-copyright p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.ef-sidebar-newsletter {
+    background: #085a78 none repeat scroll 0 0;
+    padding: 1rem 0;
+    color: white;
+}
+
+.ef-sidebar-newsletter p {
+  margin-bottom: 0;
+}
+
+.ef-theme #sidebar ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.ef-copyright a:hover, .ef-theme .top-bar li a:hover {
+  color: white;
+}
+
+.ef-sidebar-footer .widget_text:nth-child(2), .ef-sidebar-footer .widget_text:nth-child(3), .ef-sidebar-footer .widget_text:nth-child(4) {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ef-theme .top-bar .dropdown.menu .submenu li a {
+  line-height: 45px;
+}
+
+.ef-theme .top-bar .dropdown.menu .submenu {
+  border-top: 1px solid #444;
+}
+
+.pagination-centered {
+    margin:0 auto;
+    display: table;
+}
+
+.ef-theme .page-numbers {
+
+  list-style: none;
+}
+
+.ef-theme .page-numbers li {
+  display: inline;
+}
+
+.ef-theme .page-numbers .current {
+  background: #2199e8 none repeat scroll 0 0;
+  color: #fefefe;
+  padding: 0 0.4rem;
+}
+
+.ef-theme .dropdown.menu .has-submenu.is-right-arrow > a::after {
+    border-width: 0;
+}
+
+.demo-header {
+    background: rgba(0, 0, 0, 0) url("http://ebiframework.bybe.net/wp-content/uploads/2015/11/home-bg-01.svg") repeat scroll center center / cover ;
+    padding-bottom: 250px;
+    padding-top: 180px;
+    margin-top: -4rem;
+    margin-bottom: -4rem;
+}
+
+.demo-header h1 {
+  color: #fefefe;
+  font-size: 2.875rem;
+  margin: 0;
+  text-align: left;
+}
+
+.demo-header h2 {
+  color: #fefefe;
+  font-size: 1.3125rem;
+  font-weight: 200;
+}
+
+.demo-header .button {
+  background: #ff6908 none repeat scroll 0 0;
+}
+
+.demo-header .button {
+  margin-top: 20px;
+}
+
+.demo-header .button:hover {
+  background: #e05800 none repeat scroll 0 0;
+}
+
+.demo-header li a {
+  color: white;
+}
+
+.demo-header li a:hover {
+  color: #e05800;
+}
+
+@media only screen and (min-width: 640px) {
+
+.ef-theme .top-bar li:hover {
+  background: #121212;
+}
+
+.divider {
+  background: #444 none repeat scroll 0 0;
+  width: 1px;
+}
+
+main {
+  margin: 4rem 0;
+}
+
+}
+
+@media only screen and (max-width: 639px) {
+
+.menu-icon::after {
+    background: #666;
+    box-shadow: 0 7px 0 #666, 0 14px 0 #666;
+}
+
+.menu-icon:hover::after {
+    background: #fefefe;
+    box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe;
+}
+
+.js-drilldown-back::before {
+  border-width: 0;
+  margin: 0;
+}
+
+.js-drilldown-back > a::before {
+    border-color: transparent #666;
+    margin-bottom: 3px;
+}
+.ef-theme .submenu.is-drilldown-submenu.is-active {
+	margin-left: 0;
+}
+
+.has-submenu.submenu.is-drilldown-submenu.is-active li {
+  margin: 0.7rem 1rem;
+}
+
+.is-drilldown-submenu-parent > a::after {
+  border-color: transparent transparent transparent #666;
+}
+
+.menu.drilldown .is-drilldown-submenu-parent .has-submenu .is-drilldown-submenu-parent > a::after {
+  border-color: transparent transparent transparent #666;
+  float: right;
+  height: 0;
+  margin-top: 7px;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+
+.menu.drilldown li:last-child {
+  margin-bottom: 0.5rem;
+}
+
+.top-bar-right li {
+  display: block;
+}
+
+.top-bar-right .is-drilldown {
+  height: auto!important;
+}
+
+.ef-theme .is-drilldown-sub.is-active {
+  margin-left: 0;
+  padding: 0.5rem;
+}
+.ef-copyright li {
+  display: block;
+  padding: 0.3rem 0;
+}
+
+.demo-header {
+    margin-bottom: -2rem;
+    margin-top: -2rem;
+    padding-bottom: 80px;
+    padding-top: 80px;
+}
+
+main {
+    margin: 2rem 0;
+}
+}
+
+.vertical.menu.docs-menu li a {
+	padding-left: 0;
+	font-size: 0.85rem;
+}
+
+.docs-menu-title {
+    color: #999;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    margin-top: 3rem;
+    padding-left: 0rem;
+    padding-top: 1.5rem;
+    text-transform: uppercase;
+}
+
+#EBIFramework .dropdown.menu .submenu > li {
+	list-style: none;
+}
+
+.ef-copyright .menu > li:not(.menu-text):first-child > a {
+	padding-left: 0;
+}
+
+#EBIFramework .js-dropdown-active li a {
+	padding-right: 1.5rem;
+	position: relative;
+	display: block;
+	line-height: 1;
+}
+
+#EBIFramework .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: #666 transparent transparent;
+}
+
+#EBIFramework .dropdown.menu > li.is-dropdown-submenu-parent.active > a::after {
+  border-color: #fff transparent transparent;
+}
+
+#EBIFramework .dropdown.menu > li.is-dropdown-submenu-parent.active > a {
+  color: #fff;
+}
+
+#EBIFramework .dropdown.menu > li.is-dropdown-submenu-parent.active > .first-sub.vertical li.active a {
+  color: #fff;
+}
+
+.wp-caption, .wp-caption-text {
+	font-weight: normal;
+	font-style: italic;
+}
+
+.gallery-caption {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.screen-reader-text, .bypostauthor {
+	font-weight: normal;
+}
+
+.alignright {
+	text-align: right;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
