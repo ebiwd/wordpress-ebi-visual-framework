@@ -72,18 +72,15 @@
         <div class="masthead row">
           <!-- local-title -->
           <div class="columns medium-12" id="local-title">
-            <h1><a href="../../" title="Back to [service-name] homepage">EBI Framework</a></h1>
+            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
           </div>
           <!-- /local-title -->
 
           <!-- local-nav -->
-              <nav >
-                <ul class="dropdown menu float-left" data-description="navigational">
-                  <li class=""><a href="../../">Overview</a></li>
-                  <li><a data-open="modal-download">Download</a></li>
-                  <li><a href="#">Support <i class="icon icon-generic" data-icon="x"></i></a></li>
-                </ul>
-              </nav>
+          <?php ebiframework_top_bar_r(); ?>
+          <?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
+            <?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+          <?php endif; ?>
           <!-- /local-nav -->
         </div>
       </header>
