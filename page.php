@@ -20,12 +20,12 @@
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
        <header>
-           <h1 class="entry-title"><?php the_title(); ?></h1>
+         <h2 class="entry-title"><?php the_title(); ?></h2>
        </header>
        <?php do_action( 'ebiframework_page_before_entry_content' ); ?>
        <div class="entry-content">
-           <?php the_content(); ?>
-           <?php edit_post_link( __( 'Edit', 'ebiframework' ), '<span class="edit-link">', '</span>' ); ?>
+         <?php the_content(); ?>
+         <?php edit_post_link( __( 'Edit', 'ebiframework' ), '<span class="edit-link">', '</span>' ); ?>
        </div>
        <footer>
           <?php

@@ -17,6 +17,18 @@
         <?php do_action( 'ebiframework_before_footer' ); ?>
         <?php dynamic_sidebar( 'footer-widgets' ); ?>
         <?php do_action( 'ebiframework_after_footer' ); ?>
+
+        <div id="global-footer">
+
+          <nav id="global-nav-expanded" class="row">
+            <!-- Footer will be automatically inserted by footer.js -->
+          </nav>
+
+          <section id="ebi-footer-meta" class="row">
+            <!-- Footer meta will be automatically inserted by footer.js -->
+          </section>
+
+        </div>
       </footer>
     </div>
 
