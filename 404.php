@@ -1,14 +1,42 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @package EBI Visual Framework
+ * @since EBI Visual Framework 1.0.0
+ */
+
+get_header(); ?>
+
 <div class="row">
-  <div class="large-12 columns">
-    <h1><?php _e('Well Hellicopter, What the fudge, Hell\'s bells! (404)', 'ebiframework'); ?></h1>
-    <span><?php _e('You might be wondering what went wrong... here\'s some possible reasons!', 'ebiframework'); ?></span>
-    <ul>
-      <li><?php _e('You may have missed type the URL address', 'ebiframework'); ?></li>
-      <li><?php _e('You may have copied and pasted the URL incorrectly', 'ebiframework'); ?></li>
-      <li><?php _e('The page you are attempting to access no longer exists', 'ebiframework'); ?></li>
-    </ul>
-    <span><?php _e('You may be able to find what you\'re looking for by visiting our', 'ebiframework'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php _e('homepage', 'ebiframework'); ?></a></span>
-  </div>
+	<div class="small-12 large-8 columns" role="main">
+
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<header>
+				<h1 class="entry-title"><?php _e( 'File Not Found', 'ebiframework' ); ?></h1>
+			</header>
+			<div class="entry-content">
+				<div class="error">
+					<p class="bottom"><?php _e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'ebiframework' ); ?></p>
+				</div>
+				<p><?php _e( 'Please try the following:', 'ebiframework' ); ?></p>
+				<ul>
+					<li><?php _e( 'Check your spelling', 'ebiframework' ); ?></li>
+					<li>
+						<?php
+							/* translators: %s: home page url */
+							printf( __(
+								'Return to the <a href="%s">home page</a>', 'ebiframework' ),
+								home_url()
+							);
+						?>
+					</li>
+					<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', 'ebiframework' ); ?></li>
+				</ul>
+			</div>
+		</article>
+
+	</div>
+	<?php get_sidebar(); ?>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

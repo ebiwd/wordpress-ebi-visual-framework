@@ -1,82 +1,155 @@
-<?php function ebiframework_comments($comment, $args, $depth) {
-  $GLOBALS['comment'] = $comment; ?>
-  <li <?php comment_class(); ?>>
-    <article class="callout" id="comment-<?php comment_ID(); ?>">
-      <header class="comment-author">
-        <?php echo get_avatar($comment,$size='96',$default=get_template_directory_uri() .' /img/ebiframework-avatar.png'); ?>
-        <div class="author-meta">
-          <?php printf(__('<cite class="fn">%s</cite>', 'ebiframework'), get_comment_author_link()) ?>
-          <time datetime="<?php echo comment_date('c') ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s', 'ebiframework'), get_comment_date(),  get_comment_time()) ?></a></time>
-          <?php edit_comment_link(__('(Edit)', 'ebiframework'), '', '') ?>
-        </div>
-      </header>
-      <?php if ($comment->comment_approved == '0') : ?>
-        <div class="notice">
-        <p class="bottom"><?php _e('Your comment is awaiting moderation.', 'ebiframework') ?></p>
-          </div>
-      <?php endif; ?>
-      <div class="comment">
-        <?php comment_text() ?>
-      </div>
-      <footer><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></footer>
-    </article>
-<?php } ?>
 <?php
-  if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-    die (__('Please do not load this page directly. Thanks!', 'ebiframework'));
-  if ( post_password_required() ) { ?>
-  <div id="comments">
-    <div class="notice">
-      <p class="bottom"><?php _e('This post is password protected. Enter the password to view comments.', 'ebiframework'); ?></p>
-    </div>
-  </div>
-  <?php
-    return;
-  }
+/**
+ * The template for displaying comments
+ *
+ * The area of the page that contains both current comments
+ * and the comment form.
+ *
+ * @package EBI Visual Framework
+ * @since EBI Visual Framework 1.0.0
+ */
+
+if ( have_comments() ) :
+	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
-<?php if ( have_comments() ) : ?>
-  <div id="comments">
-    <div class="callout">
-      <h5 class="comment-counter"><?php comments_number(__('No Comments', 'ebiframework'), __('One Comment', 'ebiframework'), __('% Comments', 'ebiframework') ); ?></h5>
-    </div>
-    <ul class="no-bullet commentlist">
-      <?php wp_list_comments('type=comment&callback=ebiframework_comments'); ?>
-    </ul>
-    <footer>
-      <nav id="comments-nav">
-        <div class="comments-previous"><?php previous_comments_link( __( '&larr; Older comments', 'ebiframework' ) ); ?></div>
-        <div class="comments-next"><?php next_comments_link( __( 'Newer comments &rarr;', 'ebiframework' ) ); ?></div>
-      </nav>
-    </footer>
-  </div>
-<?php else : // this is displayed if there are no comments so far ?>
-  <?php if ( comments_open() ) : ?>
-  <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
-  <?php else : // comments are closed ?>
-  <div id="comments">
-    <div class="notice">
-      <p class="bottom"><?php _e('Comments disabled by administrator.', 'ebiframework') ?></p>
-    </div>
-  </div>
-  <?php endif; ?>
-<?php endif; ?>
-<?php if ( comments_open() ) : ?>
-<div id="respond">
-  <?php
-    // Cleanup Comments
-    $comments_args = array(
-      'id_form' => 'commentform',
-      'class_form' => 'comment-form',
-      'class_submit' => 'small radius button',
-      'name_submit' => 'submit',
-      'title_reply' => __( 'Leave a Reply', 'ebiframework' ),
-      'title_reply_to' => __( 'Leave a Reply to %s', 'ebiframework' ),
-      'cancel_reply_link' => __( 'Cancel Reply', 'ebiframework' ),
-      'label_submit' => __( 'Post Comment', 'ebiframework' ),
-      'format' => 'xhtml',
-      'comment_notes_after' => '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'ebiframework' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>'
-    );
-    comment_form($comments_args);
-  ?>
-</div>
-<?php endif; // if you delete this you will die irl ?>
+	<section id="comments"><?php
+
+
+		wp_list_comments(
+			array(
+				'walker'            => new Foundationpress_Comments(),
+				'max_depth'         => '',
+				'style'             => 'ol',
+				'callback'          => null,
+				'end-callback'      => null,
+				'type'              => 'all',
+				'reply_text'        => __( 'Reply', 'ebiframework' ),
+				'page'              => '',
+				'per_page'          => '',
+				'avatar_size'       => 48,
+				'reverse_top_level' => null,
+				'reverse_children'  => '',
+				'format'            => 'html5',
+				'short_ping'        => false,
+				'echo'  	    => true,
+				'moderation' 	    => __( 'Your comment is awaiting moderation.', 'ebiframework' ),
+			)
+		);
+
+		?>
+
+ 	</section>
+<?php
+	endif;
+endif;
+?>
+
+<?php
+
+	/*
+	Do not delete these lines.
+	Prevent access to this file directly
+	*/
+
+	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'ebiframework' ) );
+
+	if ( post_password_required() ) { ?>
+	<section id="comments">
+		<div class="notice">
+			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'ebiframework' ); ?></p>
+		</div>
+	</section>
+	<?php
+		return;
+	}
+?>
+
+<?php
+if ( comments_open() ) :
+	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
+?>
+<section id="respond">
+	<h3>
+		<?php
+			comment_form_title(
+				__( 'Leave a Reply', 'ebiframework' ),
+				/* translators: %s: author of comment being replied to */
+				__( 'Leave a Reply to %s', 'ebiframework' )
+			);
+		?>
+	</h3>
+	<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
+	<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
+	<p>
+		<?php
+			/* translators: %s: login url */
+			printf( __(
+				'You must be <a href="%s">logged in</a> to post a comment.', 'ebiframework' ),
+				wp_login_url( get_permalink() )
+			);
+		?>
+	</p>
+	<?php else : ?>
+	<form action="<?php echo get_option( 'siteurl' ); ?>/wp-comments-post.php" method="post" id="commentform">
+		<?php if ( is_user_logged_in() ) : ?>
+		<p>
+			<?php
+				/* translators: %1$s: site url, %2$s: user identity  */
+				printf( __(
+					'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'ebiframework' ),
+					get_option( 'siteurl' ),
+					$user_identity
+				);
+			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'ebiframework' ); ?>"><?php _e( 'Log out &raquo;', 'ebiframework' ); ?></a>
+		</p>
+		<?php else : ?>
+		<p>
+			<label for="author">
+				<?php
+					_e( 'Name', 'ebiframework' ); if ( $req ) { _e( ' (required)', 'ebiframework' ); }
+				?>
+			</label>
+			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
+		</p>
+		<p>
+			<label for="email">
+				<?php
+					_e( 'Email (will not be published)', 'ebiframework' ); if ( $req ) { _e( ' (required)', 'ebiframework' ); }
+				?>
+			</label>
+			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
+		</p>
+		<p>
+			<label for="url">
+				<?php
+					_e( 'Website', 'ebiframework' );
+				?>
+			</label>
+			<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
+		</p>
+		<?php endif; ?>
+		<p>
+			<label for="comment">
+					<?php
+						_e( 'Comment', 'ebiframework' );
+					?>
+			</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</p>
+		<p id="allowed_tags" class="small"><strong>XHTML:</strong>
+			<?php
+				_e( 'You can use these tags:','ebiframework' );
+			?>
+			<code>
+				<?php echo allowed_tags(); ?>
+			</code>
+		</p>
+		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'ebiframework' ); ?>"></p>
+		<?php comment_id_fields(); ?>
+		<?php do_action( 'comment_form', $post->ID ); ?>
+	</form>
+	<?php endif; // If registration required and not logged in. ?>
+</section>
+<?php
+	endif; // If you delete this the sky will fall on your head.
+	endif; // If you delete this the sky will fall on your head.
