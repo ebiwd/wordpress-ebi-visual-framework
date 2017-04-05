@@ -30,9 +30,9 @@ if ( ! function_exists( 'ebiframework_scripts' ) ) :
     wp_enqueue_script( 'ebifoot', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/foot.js', array(), '1.2', true );
     wp_enqueue_script( 'ebiscript', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/script.js', array(), '1.2', true );
 
-    wp_enqueue_script( 'foundation', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/libraries/foundation-6/js/foundation.js', array('jquery'), '1.2', true );
-    wp_enqueue_script( 'foundationextend', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/foundationExtendEBI.js', array('jquery'), '1.2', true );
-    wp_enqueue_script( 'foundationexecute', get_template_directory_uri() . '/assets/javascript/custom/init-foundation.js', array('jquery'), '1.2', true );
+    wp_enqueue_script( 'foundation', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/libraries/foundation-6/js/foundation.js', array('jquery','ebiscript'), '1.2', true );
+    wp_enqueue_script( 'foundationextend', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/foundationExtendEBI.js', array('jquery','ebiscript'), '1.2', true );
+    wp_enqueue_script( 'foundationexecute', get_template_directory_uri() . '/assets/javascript/custom/init-foundation.js', array('jquery','ebiscript'), '1.2', true );
 
     // <script type="text/JavaScript">$(document).foundation();</script>
     // <script type="text/JavaScript">$(document).foundationExtendEBI();</script>
