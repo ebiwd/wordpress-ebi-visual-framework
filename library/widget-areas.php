@@ -14,8 +14,8 @@ function ebiframework_sidebar_widgets() {
 	  'description' => __( 'Drag widgets to this sidebar container.', 'ebiframework' ),
 	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</article>',
-	  'before_title' => '<h6>',
-	  'after_title' => '</h6>',
+	  'before_title' => '<h3>',
+	  'after_title' => '</h3>',
 	));
 
 	register_sidebar(array(
@@ -24,8 +24,8 @@ function ebiframework_sidebar_widgets() {
 	  'description' => __( 'Drag widgets to this footer container', 'ebiframework' ),
 	  'before_widget' => '<article id="%1$s" class="large-4 columns widget %2$s">',
 	  'after_widget' => '</article>',
-	  'before_title' => '<h6>',
-	  'after_title' => '</h6>',
+	  'before_title' => '<h4>',
+	  'after_title' => '</h4>',
 	));
 }
 
