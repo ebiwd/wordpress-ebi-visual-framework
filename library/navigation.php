@@ -22,7 +22,7 @@ if ( ! function_exists( 'ebiframework_top_bar_r' ) ) {
 	function ebiframework_top_bar_r() {
 		wp_nav_menu( array(
 			'container'      => false,
-			'menu_class'     => 'dropdown menu',
+			'menu_class'     => 'dropdown menu float-left',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
 			'theme_location' => 'top-bar-r',
 			'depth'          => 3,
