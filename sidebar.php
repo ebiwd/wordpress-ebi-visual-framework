@@ -7,7 +7,7 @@
  */
 
 ?>
-<aside class="sidebar">
+<aside class="sidebar columns medium-4">
 	<?php do_action( 'ebiframework_before_sidebar' ); ?>
 	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 	<?php do_action( 'ebiframework_after_sidebar' ); ?>
