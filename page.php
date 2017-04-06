@@ -18,7 +18,14 @@
 
  <?php do_action( 'ebiframework_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>
-   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+   <?php
+   	$mainClasses = array(
+   		'main-content',
+   		'columns',
+   		'medium-8',
+   	);
+   ?>
+   <article <?php post_class($mainClasses) ?> id="post-<?php the_ID(); ?>">
        <header>
          <h2 class="entry-title"><?php the_title(); ?></h2>
        </header>
