@@ -11,6 +11,9 @@ License:            MIT License
 License URI:        http://www.opensource.org/licenses/mit-license.php
 */
 
+/* correct crayon tables */
+table thead, table tbody, table tfoot { background: none; }
+
 /* ----------------------------------------------------------------------------
 
   Unfortunately WordPress will require a style.css file
