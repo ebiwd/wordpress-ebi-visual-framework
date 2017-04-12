@@ -26,25 +26,22 @@
     </ul>
   </div>
   <div data-sticky-container>
-    <div id="local-masthead" data-sticky data-sticky-on="large" data-top-anchor="180" data-btm-anchor="300000">
+    <div id="masthead" class="masthead" data-sticky data-sticky-on="large" data-top-anchor="content:top" data-btm-anchor="content:bottom">
       <header>
 
-        <div id="global-masthead" class="clearfix">
-          <!--This has to be one line and no newline characters-->
-          <a href="//www.ebi.ac.uk/" title="Go to the EMBL-EBI homepage"><span class="ebi-logo"></span></a>
-
+        <div id="masthead-black-bar" class="clearfix masthead-black-bar">
           <nav>
             <div class="row">
               <ul id="global-nav" class="menu">
                 <!-- set active class as appropriate -->
-                <li id="home-mobile" class=""><a href="//www.ebi.ac.uk"></a></li>
-                <li id="home" class="active"><a href="//www.ebi.ac.uk"><i class="icon icon-generic" data-icon="H"></i> EMBL-EBI</a></li>
-                <li id="services"><a href="//www.ebi.ac.uk/services"><i class="icon icon-generic" data-icon="("></i> Services</a></li>
-                <li id="research"><a href="//www.ebi.ac.uk/research"><i class="icon icon-generic" data-icon=")"></i> Research</a></li>
-                <li id="training"><a href="//www.ebi.ac.uk/training"><i class="icon icon-generic" data-icon="t"></i> Training</a></li>
-                <li id="about"><a href="//www.ebi.ac.uk/about"><i class="icon icon-generic" data-icon="i"></i> About us</a></li>
-                <li id="search">
-                  <a href="#" data-toggle="search-global-dropdown"><i class="icon icon-functional" data-icon="1"></i> <span class="show-for-small-only">Search</span></a>
+                <li class="home-mobile"><a href="//www.ebi.ac.uk"></a></li>
+                <li class="home active"><a href="//www.ebi.ac.uk">EMBL-EBI</a></li>
+                <li class="services"><a href="//www.ebi.ac.uk/services">Services</a></li>
+                <li class="research"><a href="//www.ebi.ac.uk/research">Research</a></li>
+                <li class="training"><a href="//www.ebi.ac.uk/training">Training</a></li>
+                <li class="about"><a href="//www.ebi.ac.uk/about">About us</a></li>
+                <li class="search">
+                  <a href="#" data-toggle="search-global-dropdown"><span class="show-for-small-only">Search</span></a>
                   <div id="search-global-dropdown" class="dropdown-pane" data-dropdown data-options="closeOnClick:true;">
                     <form id="global-search" name="global-search" action="/ebisearch/search.ebi" method="GET">
                       <fieldset>
@@ -53,7 +50,7 @@
                           <div class="input-group-button">
                             <input type="submit" name="submit" value="Search" class="button">
                             <input type="hidden" name="db" value="allebi" checked="checked">
-                            <input type="hidden" name="requestFrom" value="global-masthead" checked="checked">
+                            <input type="hidden" name="requestFrom" value="masthead-black-bar" checked="checked">
                           </div>
                         </div>
                       </fieldset>
@@ -69,7 +66,7 @@
           </nav>
         </div>
 
-        <div class="masthead row">
+        <div class="masthead-inner row">
           <!-- local-title -->
           <div class="columns medium-12" id="local-title">
             <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

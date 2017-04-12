@@ -11,8 +11,6 @@
 
 if ( ! function_exists( 'ebiframework_scripts' ) ) :
 	function ebiframework_scripts() {
-    wp_enqueue_script( 'modernizr', '//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/libraries/modernizr/modernizr.custom.49274.js', array(), '49274', false );
-
   	// Enqueue stylesheets.
     wp_enqueue_style( 'main-stylesheet', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/libraries/foundation-6/css/foundation.css', array(), '1.2', 'all' );
     wp_enqueue_style( 'ebi-stylesheet', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/css/ebi-global.css', array(), '1.2', 'all' );
@@ -26,8 +24,6 @@ if ( ! function_exists( 'ebiframework_scripts' ) ) :
   	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', array(), '2.1.0', false );
 
     // EBI assets
-    wp_enqueue_script( 'ebicookiebanner', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/cookiebanner.js', array(), '1.2', true );
-    wp_enqueue_script( 'ebifoot', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/foot.js', array(), '1.2', true );
     wp_enqueue_script( 'ebiscript', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/js/script.js', array(), '1.2', true );
 
     wp_enqueue_script( 'foundation', '//wwwdev.ebi.ac.uk/web_guidelines/EBI-Framework/v1.2/libraries/foundation-6/js/foundation.js', array('jquery','ebiscript'), '1.2', true );
