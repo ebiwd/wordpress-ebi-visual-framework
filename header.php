@@ -70,7 +70,7 @@
 
   <?php do_action( 'ebiframework_layout_start' ); ?>
 
-  <div id="content" role="main" class="row">
+  <div id="content" role="main" class="">
     <div data-sticky-container>
       <header id="masthead" class="masthead" data-sticky data-sticky-on="large" data-top-anchor="content:top" data-btm-anchor="content:bottom">
         <div class="masthead-inner row">
