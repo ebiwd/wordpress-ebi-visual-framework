@@ -10,7 +10,7 @@ get_header(); ?>
 
 		<div id="kitchen-sink" role="main">
 			<header>
-				<h1 class="entry-title"><?php the_title(); ?></h1><hr>
+				<h2 class="entry-title"><?php the_title(); ?></h2><hr>
 				<p class="lead">This page includes every single Foundation element so that we can make sure things work together smoothly.</p><hr>
 			</header>
 
