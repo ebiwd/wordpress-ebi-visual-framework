@@ -51,5 +51,10 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
+// function modify_read_more_link() {
+//   return '<a class="readmore" href="' . get_permalink() . '">Read more</a>';
+// }
+// add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-ebiframework-protocol-relative-theme-assets.php' );
