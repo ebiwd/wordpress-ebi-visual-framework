@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
-<div id="page-sidebar-left" role="main">
+<div id="page-sidebar-left" role="main" class="row">
 
 <?php do_action( 'ebiframework_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>

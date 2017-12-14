@@ -86,7 +86,7 @@
     </header>
   </div>
 
-  <div id="content" role="main" class="row">
+  <div id="content" role="main">
 
     <section class="container">
       <?php do_action( 'ebiframework_after_header' );
