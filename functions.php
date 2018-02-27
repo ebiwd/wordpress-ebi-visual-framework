@@ -51,10 +51,18 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
-// function modify_read_more_link() {
-//   return '<a class="readmore" href="' . get_permalink() . '">Read more</a>';
-// }
-// add_filter( 'the_content_more_link', 'modify_read_more_link' );
+function modify_read_more_link() {
+  return '<a class="readmore" href="' . get_permalink() . '">Read more</a>';
+}
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
+// add custom class to tag
+function add_class_the_tags($html){
+    $postid = get_the_ID();
+    $html = str_replace('<a','<a class="tag"',$html);
+    return $html;
+}
+add_filter('the_tags','add_class_the_tags');
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-ebiframework-protocol-relative-theme-assets.php' );
