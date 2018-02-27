@@ -8,7 +8,17 @@
 
 if ( ! function_exists( 'ebiframework_sidebar_widgets' ) ) :
 function ebiframework_sidebar_widgets() {
-	register_sidebar(array(
+  register_sidebar(array(
+	  'id' => 'header-widgets',
+	  'name' => __( 'Header widgets', 'ebiframework' ),
+	  'description' => __( 'Drag widgets to this sidebar container.', 'ebiframework' ),
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
+	  'before_title' => '<h3>',
+	  'after_title' => '</h3>',
+	));
+
+  register_sidebar(array(
 	  'id' => 'sidebar-widgets',
 	  'name' => __( 'Sidebar widgets', 'ebiframework' ),
 	  'description' => __( 'Drag widgets to this sidebar container.', 'ebiframework' ),

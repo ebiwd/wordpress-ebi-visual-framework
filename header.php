@@ -40,10 +40,14 @@
     <header id="masthead" class="masthead" data-sticky data-sticky-on="large" data-top-anchor="content:top" data-btm-anchor="content:bottom">
       <div class="masthead-inner row">
         <!-- local-title -->
-        <div class="columns medium-12" id="local-title">
+        <div class="columns medium-8" id="local-title">
           <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         </div>
         <!-- /local-title -->
+
+        <div class="columns medium-4>
+          <?php dynamic_sidebar( 'header-widgets' ); ?>
+        </div>
 
         <!-- local-nav -->
         <nav id="main-menu" class="navigation" role="navigation">
