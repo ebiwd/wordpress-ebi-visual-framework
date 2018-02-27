@@ -14,7 +14,7 @@ if ( ! function_exists( 'ebiframework_scripts' ) ) :
 		// Enqueue stylesheets.
 		wp_enqueue_style( 'ebi-stylesheet', 'https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css', array(), '1.3', 'all' );
 		wp_enqueue_style( 'theme-stylesheet', 'https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/theme-embl-petrol.css', array(), '1.3', 'all' );
-		wp_enqueue_style( 'font-stylesheet', 'https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.2/fonts.css', array(), '1.2', 'all' );
+		wp_enqueue_style( 'font-stylesheet', 'https://dev.ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css', array(), '1.2', 'all' );
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
