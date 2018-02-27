@@ -12,7 +12,7 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 	<header class="clearfix padding-top-medium padding-bottom-large">
-		<h2 class="no-underline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h3 class="no-underline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		<?php ebiframework_entry_meta(); ?>
 	</header>
 	<div class="entry-content">
