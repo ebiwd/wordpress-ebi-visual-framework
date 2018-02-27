@@ -46,7 +46,7 @@
         </div>
         <!-- /local-title -->
 
-        <div class="columns medium-4>
+        <div class="columns medium-4">
           <?php dynamic_sidebar( 'header-widgets' ); ?>
         </div>
 
