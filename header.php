@@ -42,6 +42,7 @@
         <!-- local-title -->
         <div class="columns medium-8" id="local-title">
           <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php bloginfo( 'description' ); ?>
         </div>
         <!-- /local-title -->
 
