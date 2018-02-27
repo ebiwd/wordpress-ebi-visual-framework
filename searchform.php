@@ -9,7 +9,7 @@
 do_action( 'ebiframework_before_searchform' ); ?>
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	<?php do_action( 'ebiframework_searchform_top' ); ?>
-	<div class="input-group">
+	<div class="input-group padding-top-xlarge">
 		<input type="text" class="input-group-field" value="" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'ebiframework' ); ?>">
 		<?php do_action( 'ebiframework_searchform_before_search_button' ); ?>
 		<div class="input-group-button">
