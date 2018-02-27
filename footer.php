@@ -13,10 +13,17 @@
       </section>
     </div>
     <div id="footer-container">
+      <!-- Optional local footer (insert citation / project-specific copyright / etc here -->
+      <footer id="local-footer" class="local-footer" role="local-footer">
+        <div class="row">
+          <?php do_action( 'ebiframework_before_footer' ); ?>
+          <?php dynamic_sidebar( 'footer-widgets' ); ?>
+          <?php do_action( 'ebiframework_after_footer' ); ?>
+        </div>
+      </footer>
+
+      <!-- End optional local footer -->
       <footer id="footer">
-        <?php do_action( 'ebiframework_before_footer' ); ?>
-        <?php dynamic_sidebar( 'footer-widgets' ); ?>
-        <?php do_action( 'ebiframework_after_footer' ); ?>
 
         <div id="global-footer" class="global-footer">
 
