@@ -19,7 +19,7 @@
 		<?php the_content( __( 'Read more', 'ebiframework' ) ); ?>
 	</div>
 	<footer>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
+		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags( 'Tags: ', ' ', ' <!-- end tags -->' ); ?></p><?php } ?>
 	</footer>
 	<hr />
 </div>

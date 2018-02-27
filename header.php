@@ -15,6 +15,9 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?php wp_head(); ?>
+
+    <!-- <meta name="ebi:masthead-color" content="#11180f" />
+    <meta name="ebi:masthead-image" content="//tsc.ebi.ac.uk/sites/tsc.ebi.ac.uk/files/tsc/images/sections/tsc-about-us.png" /> -->
   </head>
   <body <?php body_class(); ?>>
   <div id="skip-to">
@@ -54,7 +57,7 @@
     </header>
   </div>
 
-  <div id="content" class="row" role="main">
+  <div id="content" class="row padding-top-large" role="main">
 
     <section class="container">
       <?php do_action( 'ebiframework_after_header' );
